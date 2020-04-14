@@ -1,7 +1,8 @@
 import * as helperFunctions from './helper';
 
 const covid19ImpactEstimator = (data) => {
-  const estimator = {};
+  
+    const estimator = {};
   estimator.data = data;
   estimator.impact = {};
   estimator.severeImpact = {};
