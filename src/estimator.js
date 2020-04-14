@@ -6,10 +6,10 @@ const covid19ImpactEstimator = (data) => {
   estimator.impact = {};
   estimator.severeImpact = {};
   estimator.impact.currentlyInfected = data.reportedCases * 10;
-  estimator.impact.infectionsByRequestedtime = estimator.impact.currentlyInfected
+  estimator.impact.infectionsByRequestedTime = estimator.impact.currentlyInfected
   * helperFunctions.projectedInfections(data);
   estimator.impact.severeCasesByRequestedTime = Math.trunc(0.15 * estimator.impact
-    .infectionsByRequestedtime);
+    .infectionsByRequestedTime);
   estimator.impact.hospitalBedsByRequestedTime = Math.trunc((0.35 * data.totalHospitalBeds)
     - estimator.impact.severeCasesByRequestedTime);
   estimator.impact.casesForICUByRequestedTime = Math.trunc(0.05 * estimator.impact
